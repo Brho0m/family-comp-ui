@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Bricolage+Grotesque:opsz,wght@10..48,200&family=Montserrat:wght@500&family=Tajawal:wght@200&display=swap" rel="stylesheet">
+    <style>
+    body {
+        background-color: #f4f4f4; /* soft gray */
+        font-family: 'Montserrat', sans-serif;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #121278eb;
+
+    }
+    h1 {
+    text-align: center;
+    margin-top: 2%;
+    color: #4CAF50;; /* Dark gray for heading */
+}
+
+        body.has-responses {
+            background-color: #4CAF50;
+        }
+
+        .flexing {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2%;
+    padding: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #e0e0e0; /* default secondary button color: light gray */
+    color: #333;
+    border-radius: 20px;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 20px;
+}
+
+button:hover {
+    background-color: #d0d0d0; /* slightly darker shade for hover on secondary button */
+}#downloadPDF {
+    background-color: #4a90e2; /* Soft blue for primary actions */
+}
+
+#downloadPDF:hover {
+    background-color: #357ab7; /* Darker shade for hover */
+}
+
+#responses {
+    margin: 50px;
+    padding: 90px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #333; /* Dark gray for text */
+}
+
+#deadline-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+label {
+    margin-right: 1rem;
+    color: #4CAF50;; /* Slightly lighter color for labels */
+}
+.select-response-label {
+    display: inline-block;
+    background-color: #e0e0e0; /* default secondary button color */
+    color: #4CAF50;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.select-response-label:hover {
+    background-color: #d0d0d0; /* slightly darker shade for hover */
+}
+
+.response-container {
+    display: flex;
+    align-items: center;
+}
+
+.responseToggle {
+    background-color: #e0e0e0;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.responseToggle:hover {
+    background-color: #d0d0d0;
+}
+
+.responseToggle[data-selected="true"] {
+    background-color: #4a90e2;
+    color: white;
+}
+.response-item {
+    background-color: gray;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 600px) {
+    .response-item {
+        font-size: 5px;
+    }
+    .flexing{
+        flex-direction: column;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <h1 style="font-size: 50px;">Admin Dashboard</h1>
+    <h2 style="text-align: center; color: #15ff00dc; font-size: 34px;">welcome back Boss!</h2>
+    <div class="flexing">
+        <button id="clearDatabase">Clear Database</button>
+        <div>
+            <div id="loading" style="display: none;">Generating PDF... Please wait.</div>
+        </div>
+        <button id="refreshResponses">↻ Refresh Responses</button>
+        <button id="downloadAllResponsesBtn">Download All Responses as PDF</button>
+
+    </div>
+
+    <div id="deadline-container">
+        <label for="deadline" style="font-weight: bold; font-size: 20px;">Set/Change Deadline:</label>
+        <input type="datetime-local" id="deadline" style="padding: 20px; background-color: #7b7bc5;;">
+        <button id="setDeadline" style="padding: 20px; margin-left: 10px;">Set</button>
+    </div>
+    <div id="dashboard">
+
+
+
+        <!-- ... (rest of the code) ... -->
+        <h2 id="responseCount" style="text-align: center; color: #4CAF50; font-size: 30px;">Total Responses: 0</h2>
+       
+        <div id="responses">
+            <div class="response-container">
+                <div class="responseData"></div>
+            </div>
+            <!-- ... Repeat for each response ... -->
+        </div>
+        
+        <script src="/admin.js"></script>
+        
+
+
+</body>
+
+</html>

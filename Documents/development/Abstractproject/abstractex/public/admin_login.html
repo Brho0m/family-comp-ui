@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;  /* Makes the body take the full viewport height */
+            background-color: #121278eb;
+
+        }
+
+        h1 {
+            position: absolute;
+            top: 10%;
+            width: 100%;
+            text-align: center;
+        }
+
+        #loginModal {
+            display: block; /* Show the modal from the start */
+            padding: 20px;
+            background-color: #121278eb;
+            max-width: 300px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #45a049;
+
+        }
+
+        #loginModal label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        #loginModal input[type="text"],
+        #loginModal input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #7b7bc5;
+        }
+
+        #loginModal input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 15px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #loginModal {
+        min-height: 250px; /* Adjust as needed */
+        min-width: 300px;  /* Keep as before */
+        }
+
+        #loginModal input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: #4CAF50;">Welcome!</h1>
+
+    <div id="loginModal">
+        <form action="/admin_login" method="post">
+            <!-- ... your previous HTML code ... -->
+
+            <!-- Below the username input -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <span id="usernameError" style="color: red; display: none;">Username is required.</span>
+            
+            <!-- Below the password input -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <span id="passwordError" style="color: red; display: none;">Password is required.</span>
+            
+            <!-- ... rest of your HTML code ... -->
+            
+
+            <input type="submit" value="Login">
+
+        </form>
+        <div id="errorMsg" style="color: red; font-size: 5px; margin-top: 20px;"></div>
+
+    </div>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevents the form from submitting the traditional way
+    
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+    
+            let hasError = false; // To track if there are any errors
+    
+            // Hide the error messages initially
+            document.getElementById("usernameError").style.display = "none";
+            document.getElementById("passwordError").style.display = "none";
+            document.getElementById("errorMsg").textContent = "";
+    
+            if (!username.trim()) {
+                document.getElementById("usernameError").style.display = "block";
+                hasError = true;
+            }
+    
+            if (!password.trim()) {
+                document.getElementById("passwordError").style.display = "block";
+                hasError = true;
+            }
+    
+            if (hasError) {
+                return; // If there are errors, stop the function here
+            }
+    
+            fetch('/admin_login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            })
+            .then(response => response.json()).then(data => {
+                if (data.success) {
+                    window.location.href = data.redirect; // Redirect to the dashboard
+                } else {
+                    // Display the server error message
+                    const errorMsg = document.getElementById("errorMsg");
+                    errorMsg.textContent = data.error;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+
+    </script>
+    
+    
+</body>
+</html>
