@@ -1,0 +1,16 @@
+<div>
+    <h2>Admin Panel</h2>
+    <button (click)="resetGame()">Reset Game</button>
+
+    <button (click)="forceNavigateScore()">Force Navigate to Score Page</button>
+<button (click)="forceNavigateCompetition()">Force Navigate to Competition Page</button>
+
+    <h3>Click Order and Actions</h3>
+    <ul>
+        <li *ngFor="let click of clicks">
+          User: {{ click.username }} - Time: {{ click.timeClicked | date:'medium' }}
+          <button (click)="updateScore(click, 10)">+10</button>
+          <button (click)="updateScore(click, -10)">-10</button>
+        </li>
+      </ul>
+      
