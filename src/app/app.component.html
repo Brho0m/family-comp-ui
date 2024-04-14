@@ -1,16 +1,35 @@
 <!-- Navigation bar -->
-<nav>
-  <ul>
-    <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/competition">Competition</a></li>
-    <li><a routerLink="/admin">Admin</a></li>
-    <li><a routerLink="/scores">Scores</a></li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  
+
+<nav style="margin: 0px;">
+  <ul style="margin: 0px;">
+    <li><a routerLink="/">الرئيسية</a></li>
+    <li><a routerLink="/competition">المسابقة</a></li>
+    <li><a routerLink="/admin">المشرف</a></li>
+    <li><a routerLink="/scores">النقاط</a></li>
   </ul>
 </nav>
 <!-- Content rendered by the router -->
-<router-outlet></router-outlet>
+<router-outlet style="margin: 0px;">
+  
+  
+</router-outlet>
 
 <!-- Footer (optional) -->
 <footer>
-  <p>Family Competition App © 2024</p>
+  <p>شركة جودة تحسين الحياة اللامحدودة © 2024</p>
 </footer>
+</body>
+
+</html>
