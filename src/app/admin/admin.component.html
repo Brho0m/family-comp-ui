@@ -1,11 +1,18 @@
-<div>
-    <h2>Admin Panel, KHRAAAAAAAAAAAAAAAAAAAAAA</h2>
+
+  
+
+  
+  <video autoplay muted loop class="back" src="assets/Hvid.webm">
+    <source src="assets/Hvid.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+<div class="f">
+    <h2 style="color: white; text-align: center;">Admin Panel KHRAAAAAAAAAAAAAAAAAAAAAAAAAAA</h2>
     <button (click)="resetGame()">Reset Game</button>
 
     <button (click)="forceNavigateScore()">Force Navigate to Score Page</button>
 <button (click)="forceNavigateCompetition()">Force Navigate to Competition Page</button>
-
-    <h3>Click Order and Actions</h3>
+    <h3 style="color: white; text-align: center;">Click Order and Actions</h3>
     <ul>
         <li *ngFor="let click of clicks">
           User: {{ click.username }} - Time: {{ click.timeClicked | date:'medium' }}
