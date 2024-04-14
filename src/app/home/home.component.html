@@ -1,0 +1,9 @@
+<div>
+    <h2>Select Your Name</h2>
+    <ul>
+      <li *ngFor="let user of users" (click)="onUserSelect(user)">
+        {{ user.username }}
+      </li>
+    </ul>
+  </div>
+  
