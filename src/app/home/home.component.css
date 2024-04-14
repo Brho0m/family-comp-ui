@@ -1,0 +1,34 @@
+html {
+    height: 100%;
+  }
+
+body{
+    margin: 0px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+.center{
+    padding: 200px;
+}
+h1,h2,ul,li{
+    margin: 0px;
+}
+h1,h2{
+    font-family: "Rubik", sans-serif;
+}
+
+@media screen and (max-width: 800px){
+   .center{
+    padding: 50px;
+   }
+}
