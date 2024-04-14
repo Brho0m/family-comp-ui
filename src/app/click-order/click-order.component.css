@@ -15,4 +15,6 @@ body{
 }
 h1,h2{
     font-family: "Rubik", sans-serif;
+    text-align: center;
+    color: white;
 }
