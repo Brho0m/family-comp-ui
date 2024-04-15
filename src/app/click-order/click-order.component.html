@@ -1,20 +1,26 @@
-
 <video autoplay muted loop class="back" src="assets/Hvid.webm">
   <source src="assets/Hvid.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
-
-<div>
-  <h2>من اللي ضغط اول</h2>
-  <table>
-    <tr>
-      <th>اللاعب</th>
-      <th>وقت الضغط</th>
-    </tr>
-    <tr *ngFor="let click of clicks">
-      <td>{{ click.username }}</td>
-      <td>{{ click.timeClicked | date: 'medium' }}</td>
-    </tr>
+<div class="center-table">
+  <h2>
+    !من اللي ضغط أول
+  </h2>
+    <table>
+      <thead>
+          <tr>
+              <th>#</th>
+              <th>اللاعب</th>
+              <th>وقت الضغط</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let click of clicks; let i=index">
+              <td class="number">{{i+1}}</td>
+              <td class="name">{{ click.username }}</td>
+              <td class="date">{{ click.timeClicked | date: 'medium' }}</td>
+          </tr>
+      </tbody>
   </table>
 </div>

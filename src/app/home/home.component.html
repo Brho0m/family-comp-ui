@@ -1,31 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مسابقة تحسين جودة الحياة</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-</head>
 
 
-<body> 
     <video autoplay muted loop class="back" src="assets/Hvid.webm">
       <source src="assets/Hvid.webm" type="video/webm">
       Your browser does not support the video tag.
     </video>
+
+    <div class="f">
+
 <div class="center">
     <h1 style="text-align: center; color: rgb(237, 231, 240);">مرحبًا بك في مسابقة شركة جودة تحسين الحياة اللامحدودة</h1>
     <h2 style="text-align: center; color: rgb(31, 25, 34); padding: 50px">اختر اسمك</h2>
     <ul>
-      <li *ngFor="let user of users" (click)="onUserSelect(user)" style="background-color: blue;">
+      <li *ngFor="let user of users" (click)="onUserSelect(user)" style="background-color: rgb(26, 33, 83);">
         {{ user.username }}
       </li>
     </ul>
   </div>
-
-</body>
-
-
-</html>
+</div>
