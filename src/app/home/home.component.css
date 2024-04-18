@@ -1,7 +1,12 @@
 html {
     height: 100%;
   }
-
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* This ensures padding does not affect the total width */
+  }
+  
 body{
     margin: 0px;
     position: relative;
@@ -48,12 +53,34 @@ h1,h2{
     border-radius: 5px;
     padding: 25px 100px;
 }
-
+li {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+  }
+  
 .f button:hover {
     background-color: #45a049;
+}
+img{
+    width: 50px; height: 70px; margin:0px;
+}
+.women{
+    width: 40px;
+    height: 40px;
+    margin: 0px;
 }
 @media screen and (max-width: 800px){
    .center{
     padding: 50px;
    }
+   li {
+    flex-direction: column; /* Stack the image and text on top of each other on small screens */
+  }
+  .f li{
+    margin-bottom: 15px;
+    padding: 10px 80px;
+
+  }
 }

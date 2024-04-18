@@ -13,6 +13,9 @@
     <ul>
       <li *ngFor="let user of users" (click)="onUserSelect(user)" style="background-color: rgb(26, 33, 83);">
         {{ user.username }}
+
+        <img *ngIf="user.gender === 'man'" src="assets/man.png" alt="Man" class="man">
+        <img *ngIf="user.gender === 'woman'" src="assets/women.png" alt="Women" class="women">
       </li>
     </ul>
   </div>

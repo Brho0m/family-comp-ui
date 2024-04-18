@@ -55,3 +55,15 @@ body{
 .f button:hover {
     background-color: #45a049;
 }
+@media screen and (max-width: 800px){
+    .f li{
+        margin-bottom: 100px;
+        padding: 10px;
+
+    }
+    .f button{
+        margin-left: 80px;
+        padding: 5px 7px;
+        margin-bottom: 20px;
+    }
+}
