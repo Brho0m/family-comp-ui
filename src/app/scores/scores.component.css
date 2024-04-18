@@ -1,34 +1,34 @@
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    background-color: #f0f0f0;
-    margin: 0;
-    overflow: hidden;
-  }
-  
-  nav ul li {
-    float: left;
-  }
 
-  h2{
-    font-family: "Rubik", sans-serif;
+
+.center{
+    padding: 20px;
+    display: grid;
+    place-items: center;
+}
+h1,h2,ul,li{
+    margin: 0px;
     color: white;
+    font-family: "Rubik", sans-serif;
+
+}
+.f {
+    text-align: center;
+    color: white;
+}
+.f ul {
+    list-style-type: none;
+}
+li {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    background-color: rgb(27, 14, 97);
+    margin: 50px;
+    padding: 50px;
     text-align: center;
   }
-  
-  nav ul li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  nav ul li a:hover {
-    background-color: #ddd;
-  }
-  
-  
+ 
   footer {
     text-align: center;
     padding: 20px;

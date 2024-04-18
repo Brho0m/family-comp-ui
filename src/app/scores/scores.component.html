@@ -6,18 +6,16 @@
   </video>
   
 
+<div class="center">
   <h2>النقاط</h2>
-
-
   <div>
-    <h2>Leaderboard</h2>
     <ul>
       <li *ngFor="let user of users">
         {{ user.username }}: {{ user.score }}
       </li>
     </ul>
   </div>
-
+</div>
 <!-- Content rendered by the router -->
 <router-outlet>
   
