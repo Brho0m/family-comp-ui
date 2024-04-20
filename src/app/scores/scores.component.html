@@ -6,16 +6,24 @@
   </video>
   
 
-<div class="center">
+<div class="center-table">
   <h2>النقاط</h2>
-  <div>
-    <ul>
-      <li *ngFor="let user of users">
-        {{ user.username }}: {{ user.score }}
-      </li>
-    </ul>
-  </div>
-</div>
+  <table>
+    <thead>
+      <tr>
+          <th>#</th>
+          <th>اللاعب</th>
+          <th>نقاط اللاعب</th>
+      </tr>
+  </thead>
+      <tbody>
+      <tr *ngFor="let user of users; let i= index;">
+              <td class="#">{{i+1}}</td>
+              <td class="name">{{ user.username}}</td>
+              <td class="score">{{user.score}}</td>
+      </tr>
+    </tbody>
+</table>
 <!-- Content rendered by the router -->
 <router-outlet>
   

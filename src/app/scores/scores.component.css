@@ -1,9 +1,30 @@
 
 
-.center{
-    padding: 20px;
-    display: grid;
-    place-items: center;
+.center-table {
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-family: "Rubik", sans-serif;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.center-table th {
+    color: rgb(0, 255, 98);
+    padding: 15px 0px;
+}
+.center-table td {
+    padding: 30px 100px;
+    background-color: rgb(25, 3, 73);
+    color: white;
+}
+.name {
+    padding-right: 30px;
+}
+.number, .name, .score {
+    text-align: center;
 }
 h1,h2,ul,li{
     margin: 0px;
