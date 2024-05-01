@@ -19,7 +19,7 @@ export class WebSocketService {
   }
 
   private initializeWebSocketConnection(): void {
-    const serverUrl = 'http://localhost:8080/ws';
+    const serverUrl = 'http://192.168.100.128:8080/ws';
     const ws = new SockJS(serverUrl);
     this.stompClient = Stomp.over(ws);
     this.stompClient.connect({}, (frame: any) => {

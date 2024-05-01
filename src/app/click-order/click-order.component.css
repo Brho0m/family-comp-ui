@@ -12,6 +12,8 @@ body {
     height: 100vh;
     object-fit: cover;
     z-index: -1;
+    pointer-events: none;
+
 }
 h1, h2 {
     font-family: "Rubik", sans-serif;

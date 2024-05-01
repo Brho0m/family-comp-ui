@@ -12,6 +12,7 @@ body{
     height: 100vh;
     object-fit: cover;
     z-index: -1;
+    pointer-events: none;
 }
 button{
     padding: 70px;
