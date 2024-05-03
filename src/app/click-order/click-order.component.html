@@ -15,7 +15,7 @@
           <tr *ngFor="let click of clicks; let i=index">
               <td class="number">{{i+1}}</td>
               <td class="name">{{ click.username }}</td>
-              <td class="date">{{ click.timeClicked | date: 'medium' }}</td>
+              <td class="date">{{ click.timeClicked | date: 'h:mm:ss:SS' }}</td>
           </tr>
       </tbody>
   </table>
